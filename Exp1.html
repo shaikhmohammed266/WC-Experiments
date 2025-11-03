@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A.I.K.T.C</title>
+    <style>
+        body {
+            font-family: Cambria, Optima, sans-serif;
+            margin: 30px;
+            background-image: url('aiktc.png'); /* or your actual image file name */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    
+        h1, h2 {
+            color: darkred;
+        }
+    
+        p, label, td, th, li {
+            color: darkred;
+        }
+    
+        a {
+            color: navy;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    
+        a:hover {
+            color: rgb(0, 139, 7);
+        }
+    
+        table, ul, form {
+            backface-visibility: visible;
+            border: none;
+            padding: 10px;
+            opacity: 0.95; /* Slight transparency */
+        }
+    
+        th, td {
+            border: none;
+            padding: 8px;
+            text-align: left;
+        }
+    
+        input, textarea, button {
+            width: 95%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+    
+        button {
+            backface-visibility: visible;
+            border: none;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            backface-visibility: visible;
+        }
+    
+        hr {
+            margin: 30px 0;
+            border: 1px solid ;
+        }
+    </style>
+
+    </head>
+    <body>
+        <h1 id = "home">Anjuman-I-Islam Kalsekar Technical Campus</h1>
+        <p>This is the home page of our college website</p>
+        <p>
+            <a href ="#home">Home</a> |
+            <a href = "#department">Department</a> |
+            <a href = "#facility">Facility</a> |
+            <a href = "#contact">Contact Us</a>
+        </p>
+
+        <hr>
+
+        <h2 id = "department">Department</h2>
+        <table border = "1">
+            <tr>
+                <th>Sr. No</th>
+                <th>Department Name</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Computer Science & Engineering(DS)</td>
+            </tr>
+             <tr>
+                <td>2</td>
+                <td>Computer Science & Engineering(AIML)</td>
+            </tr>
+             <tr>
+                <td>3</td>
+                <td>Computer Engineering</td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2 id ="facility">Faclities</h2>
+        <ul>
+            <li>Library</li>
+            <li>Computer Labs</li>
+            <li>Lecture Halls</li>
+            <li>Seminar Halls</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="contact"> Contact Us</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+            
+            <label for="message">Queries:</label><br>
+            <textarea id="message" rows="4" cols="30"></textarea><br><br>
+            
+            <button type="submit">Submit</button>
+        </form>
+
+        <hr>
+
+        <p><a href='#home'>Back to Home Section</a></p>
+    </body>
+</html>
