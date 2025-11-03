@@ -1,0 +1,97 @@
+1. Express Introduction
+
+File: app.js
+
+const express = require('express');
+const app = express();
+
+// Middleware
+app.use(express.json());
+
+// Simple route
+app.get('/', (req, res) => {
+  res.send('Welcome to Express!');
+});
+
+app.listen(3000, () => console.log('Server running on port 3000'));
+
+
+Concept:
+
+express() creates the app.
+
+app.get() handles GET requests.
+
+app.listen() starts the server.
+
+2. Express Router
+
+File: routes/students.js
+
+const express = require('express');
+const router = express.Router();
+
+// Student routes
+router.get('/', (req, res) => res.send('All Students'));
+router.get('/:id', (req, res) => res.send(`Student ID: ${req.params.id}`));
+
+module.exports = router;
+
+
+Update app.js:
+
+const studentRoutes = require('./routes/students');
+app.use('/students', studentRoutes);
+
+
+Concept:
+Router helps organize routes into separate files (modular structure).
+
+3. REST API
+
+File: routes/api.js
+
+const express = require('express');
+const router = express.Router();
+let students = [{ id: 1, name: 'Aman' }];
+
+router.get('/', (req, res) => res.json(students));           // Read
+router.post('/', (req, res) => {                             // Create
+  students.push(req.body);
+  res.json({ message: 'Student added' });
+});
+router.put('/:id', (req, res) => {                           // Update
+  const id = parseInt(req.params.id);
+  students = students.map(s => s.id === id ? req.body : s);
+  res.json({ message: 'Updated' });
+});
+router.delete('/:id', (req, res) => {                        // Delete
+  students = students.filter(s => s.id != req.params.id);
+  res.json({ message: 'Deleted' });
+});
+
+module.exports = router;
+
+
+Use it in app.js:
+
+const apiRoutes = require('./routes/api');
+app.use('/api/students', apiRoutes);
+
+
+Concept:
+Implements CRUD operations (Create, Read, Update, Delete) — the core of REST APIs.
+
+4. Express Generator
+
+To create a project automatically:
+
+npx express-generator student-app
+cd student-app
+npm install
+npm start
+
+
+Concept:
+This generates a ready-to-use Express app structure with routes, views, and public folders.
+
